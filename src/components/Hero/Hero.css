@@ -1,18 +1,25 @@
 .hero {
   position: relative;
   min-height: 100vh;
+
   display: flex;
   align-items: center;
+
   overflow: hidden;
+
   background: #16100b;
 }
+
+/* =========================
+   IMAGEM DO HERO
+   PADRÃO: DESKTOP / TABLET
+========================= */
 
 .hero__background {
   position: absolute;
   inset: 0;
 
-  background-image:
-    url('/images/evento-3.jpg');
+  background-image: url('/images/hero-horizontal.jpg');
 
   background-size: cover;
   background-position: center center;
@@ -20,6 +27,10 @@
 
   transform: scale(1.01);
 }
+
+/* =========================
+   SOMBREAMENTO
+========================= */
 
 .hero__overlay {
   position: absolute;
@@ -34,6 +45,10 @@
       rgba(16, 8, 3, 0.38) 100%
     );
 }
+
+/* =========================
+   CONTEÚDO
+========================= */
 
 .hero__content {
   position: relative;
@@ -50,6 +65,10 @@
   max-width: 790px;
 }
 
+/* =========================
+   ETIQUETA
+========================= */
+
 .hero__badge {
   display: inline-flex;
 
@@ -64,11 +83,16 @@
 
   font-size: 0.78rem;
   font-weight: 900;
+
   letter-spacing: 0.11em;
   text-transform: uppercase;
 
   backdrop-filter: blur(10px);
 }
+
+/* =========================
+   TÍTULO
+========================= */
 
 .hero h1 {
   max-width: 760px;
@@ -87,11 +111,17 @@
 
 .hero h1 span {
   display: block;
+
   color: #ff8b3d;
 }
 
+/* =========================
+   DESCRIÇÃO
+========================= */
+
 .hero p {
   max-width: 670px;
+
   margin: 30px 0 0;
 
   color: rgba(255, 248, 232, 0.86);
@@ -99,6 +129,10 @@
   font-size: clamp(1rem, 2vw, 1.23rem);
   line-height: 1.75;
 }
+
+/* =========================
+   BOTÕES
+========================= */
 
 .hero__actions {
   display: flex;
@@ -146,14 +180,20 @@
 
 .hero__button--secondary {
   border: 1px solid rgba(255, 255, 255, 0.3);
+
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
+
   backdrop-filter: blur(10px);
 }
 
 .hero__button--secondary:hover {
   background: rgba(255, 255, 255, 0.14);
 }
+
+/* =========================
+   INFORMAÇÕES
+========================= */
 
 .hero__info {
   display: flex;
@@ -170,18 +210,25 @@
 .hero__info div {
   display: flex;
   flex-direction: column;
+
   gap: 3px;
 }
 
 .hero__info strong {
   color: #fff8e8;
+
   font-size: 0.9rem;
 }
 
 .hero__info span {
   color: rgba(255, 248, 232, 0.58);
+
   font-size: 0.78rem;
 }
+
+/* =========================
+   SETA PARA BAIXO
+========================= */
 
 .hero__scroll {
   position: absolute;
@@ -210,23 +257,24 @@
   backdrop-filter: blur(10px);
 }
 
+/* =========================
+   TABLET E CELULAR
+========================= */
+
 @media (max-width: 900px) {
   .hero {
     min-height: 100svh;
-    align-items: flex-end;
-  }
 
-  .hero__background {
-    background-position: center top;
+    align-items: flex-end;
   }
 
   .hero__overlay {
     background:
       linear-gradient(
         180deg,
-        rgba(16, 8, 3, 0.28) 0%,
-        rgba(16, 8, 3, 0.55) 35%,
-        rgba(16, 8, 3, 0.92) 72%,
+        rgba(16, 8, 3, 0.22) 0%,
+        rgba(16, 8, 3, 0.48) 35%,
+        rgba(16, 8, 3, 0.9) 72%,
         rgba(16, 8, 3, 0.98) 100%
       );
   }
@@ -251,6 +299,7 @@
 
   .hero p {
     max-width: 100%;
+
     margin-top: 22px;
 
     font-size: 1rem;
@@ -267,6 +316,7 @@
 
   .hero__info {
     gap: 18px;
+
     margin-top: 34px;
   }
 
@@ -279,14 +329,49 @@
   }
 }
 
+/* =========================
+   IMAGEM EXCLUSIVA MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .hero__background {
+    background-image: url('/images/hero-mobile.jpg');
+
+    background-size: cover;
+
+    /*
+      Você pode mudar esta linha depois
+      para controlar o enquadramento.
+    */
+    background-position: center center;
+
+    background-repeat: no-repeat;
+  }
+}
+
+/* =========================
+   CELULAR PEQUENO
+========================= */
+
 @media (max-width: 520px) {
   .hero {
     min-height: 100svh;
   }
 
   .hero__background {
+    background-image: url('/images/hero-mobile.jpg');
+
     background-size: cover;
-    background-position: 55% top;
+
+    /*
+      Ajuste horizontal:
+      50% = centro
+      60% = mostra mais a direita
+      40% = mostra mais a esquerda
+    */
+    background-position: 50% center;
+
+    background-repeat: no-repeat;
   }
 
   .hero__content {
@@ -296,6 +381,7 @@
 
   .hero__badge {
     max-width: 100%;
+
     margin-bottom: 18px;
 
     white-space: normal;
@@ -310,10 +396,75 @@
 
   .hero__info {
     display: grid;
+
     grid-template-columns: 1fr;
   }
 
   .hero__info div {
     width: 100%;
+  }
+}
+
+/* =========================
+   CELULAR DEITADO
+========================= */
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    min-height: 100svh;
+
+    align-items: center;
+  }
+
+  /*
+    Quando o celular estiver deitado,
+    volta para a imagem horizontal.
+  */
+  .hero__background {
+    background-image: url('/images/hero-desktop.jpg');
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .hero__content {
+    padding-top: 90px;
+    padding-bottom: 35px;
+  }
+
+  .hero__content-inner {
+    max-width: 650px;
+  }
+
+  .hero__badge {
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.2rem);
+  }
+
+  .hero p {
+    margin-top: 15px;
+
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .hero__actions {
+    margin-top: 20px;
+
+    flex-direction: row;
+  }
+
+  .hero__button {
+    width: auto;
+
+    min-height: 46px;
+  }
+
+  .hero__info {
+    display: none;
   }
 }

@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1f1b17;
+  background: #fff5df;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --orange: #ff8b3d;
+  --red: #cf3a24;
+  --green: #173d26;
+  --cream: #fff5df;
+  --dark: #1d120b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Archivo Black', 'Inter', sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}

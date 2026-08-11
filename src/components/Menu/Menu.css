@@ -1,0 +1,284 @@
+.menu-section {
+  padding: 110px 0;
+
+  background: #173d26;
+  color: #fff8e8;
+}
+
+.menu-section__container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.menu-section .section-label {
+  color: #ff9a55;
+}
+
+.menu-section__header {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  gap: 70px;
+
+  align-items: end;
+
+  margin-bottom: 70px;
+}
+
+.menu-section__header h2 {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #fff8e8;
+
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.menu-section__header > p {
+  max-width: 490px;
+
+  margin: 0;
+
+  color: rgba(255, 248, 232, 0.68);
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.menu-category + .menu-category {
+  margin-top: 85px;
+}
+
+.menu-category__title {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 28px;
+}
+
+.menu-category__icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #ff8b3d;
+  color: #173d26;
+}
+
+.menu-category__title > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.menu-category__title span {
+  color: rgba(255, 248, 232, 0.58);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.menu-category__title h3 {
+  margin: 0;
+
+  color: #fff8e8;
+
+  font-size: 1.7rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+.menu-card {
+  min-height: 205px;
+
+  padding: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(255, 139, 61, 0.4);
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.menu-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+
+  color: #ff9250;
+}
+
+.menu-card__number {
+  color: rgba(255, 248, 232, 0.32);
+
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.menu-card h3 {
+  margin: 0;
+
+  color: #fff8e8;
+
+  font-size: 1.15rem;
+}
+
+.menu-card p {
+  margin: 10px 0 0;
+
+  color: rgba(255, 248, 232, 0.58);
+
+  font-size: 0.87rem;
+  line-height: 1.65;
+}
+
+.menu-category--sweet .menu-category__icon {
+  background: #d13d25;
+  color: #ffffff;
+}
+
+.menu-category--sweet .menu-card:hover {
+  border-color: rgba(209, 61, 37, 0.5);
+}
+
+.menu-section__note {
+  margin-top: 80px;
+  padding: 35px 40px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  gap: 28px;
+
+  border-radius: 22px;
+
+  background: #fff4dc;
+  color: #173d26;
+}
+
+.menu-section__note strong {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.25rem;
+}
+
+.menu-section__note p {
+  margin: 0;
+
+  color: #675b4e;
+
+  line-height: 1.6;
+}
+
+.menu-section__note a {
+  min-height: 48px;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #d13d25;
+  color: #ffffff;
+
+  font-weight: 900;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.menu-section__note a:hover {
+  transform: translateY(-2px);
+  background: #b8311d;
+}
+
+@media (max-width: 1000px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .menu-section__note {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-section__note a {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 800px) {
+  .menu-section {
+    padding: 80px 0;
+  }
+
+  .menu-section__header {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 50px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .menu-section__container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card {
+    min-height: auto;
+  }
+
+  .menu-section__note {
+    padding: 27px 22px;
+  }
+
+  .menu-section__note a {
+    width: 100%;
+  }
+}

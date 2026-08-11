@@ -8,6 +8,7 @@ import Menu from './components/Menu/Menu'
 import Plans from './components/Plans/Plans'
 import Events from './components/Events/Events'
 import Gallery from './components/Gallery/Gallery'
+import Location from './components/Location/Location'
 
 function App() {
   const whatsappUrl =
@@ -110,6 +111,8 @@ function App() {
         <Events />
 
         <Gallery />
+
+        <Location />
       </main>
 
       <a
@@ -136,7 +139,10 @@ function App() {
           />
 
           <span className="mascot-whatsapp__icon">
-            <MessageCircle size={27} strokeWidth={2.5} />
+            <MessageCircle
+              size={27}
+              strokeWidth={2.5}
+            />
           </span>
         </div>
       </a>

@@ -1,0 +1,389 @@
+.location-section {
+  padding: 100px 0;
+
+  background: #fff5df;
+}
+
+.location-section__container {
+  width: min(1180px, calc(100% - 40px));
+
+  margin: 0 auto;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.location-section__heading {
+  max-width: 760px;
+
+  margin-bottom: 45px;
+}
+
+.location-section__heading > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #c43a22;
+
+  font-size: 0.76rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.location-section__heading h2 {
+  margin: 0;
+
+  color: #173d26;
+
+  font-size:
+    clamp(
+      2.7rem,
+      6vw,
+      5rem
+    );
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+}
+
+.location-section__heading p {
+  max-width: 650px;
+
+  margin: 22px 0 0;
+
+  color: #675e53;
+
+  font-size: 1.05rem;
+
+  line-height: 1.75;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.location-card {
+  display: grid;
+
+  grid-template-columns:
+    minmax(320px, 0.75fr)
+    minmax(0, 1.25fr);
+
+  min-height: 560px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: #173d26;
+
+  box-shadow:
+    0 25px 70px
+    rgba(47, 31, 16, 0.17);
+}
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.location-card__info {
+  padding: 48px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: center;
+}
+
+.location-card__logo {
+  width: 90px;
+  height: 90px;
+
+  margin-bottom: 25px;
+
+  overflow: hidden;
+
+  border:
+    3px solid
+    rgba(255, 255, 255, 0.85);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.25);
+}
+
+.location-card__logo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.location-card__label {
+  color: #ff9b58;
+
+  font-size: 0.7rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+}
+
+.location-card__info h3 {
+  margin: 8px 0 0;
+
+  color: #fff8e8;
+
+  font-size:
+    clamp(
+      2.6rem,
+      5vw,
+      4.2rem
+    );
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+.location-card__city {
+  margin: 8px 0 0;
+
+  color: #ff9b58;
+
+  font-size: 1.05rem;
+
+  font-weight: 900;
+}
+
+.location-card__description {
+  margin: 22px 0 0;
+
+  color:
+    rgba(255, 248, 232, 0.67);
+
+  line-height: 1.7;
+}
+
+/* =========================
+   DETALHES
+========================= */
+
+.location-card__details {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.location-detail {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 13px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 13px;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+}
+
+.location-detail__icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #ff8b3d;
+
+  color: #173d26;
+}
+
+.location-detail strong {
+  display: block;
+
+  color: #fff8e8;
+
+  font-size: 0.86rem;
+}
+
+.location-detail span {
+  display: block;
+
+  margin-top: 2px;
+
+  color:
+    rgba(255, 248, 232, 0.5);
+
+  font-size: 0.74rem;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+.location-card__button {
+  width: 100%;
+
+  min-height: 52px;
+
+  margin-top: 25px;
+
+  padding: 0 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  border-radius: 13px;
+
+  background: #cf3a24;
+
+  color: #ffffff;
+
+  font-size: 0.87rem;
+
+  font-weight: 900;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.location-card__button:hover {
+  transform: translateY(-2px);
+
+  background: #b52f1c;
+}
+
+/* =========================
+   GOOGLE MAPS
+========================= */
+
+.location-card__map {
+  position: relative;
+
+  min-height: 560px;
+
+  background: #e6e1d8;
+}
+
+.location-card__map iframe {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  display: block;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+  .location-section {
+    padding: 75px 0;
+  }
+
+  .location-card {
+    grid-template-columns: 1fr;
+  }
+
+  .location-card__info {
+    padding: 40px;
+  }
+
+  .location-card__map {
+    min-height: 450px;
+  }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+  .location-section {
+    padding: 65px 0;
+  }
+
+  .location-section__container {
+    width: calc(100% - 28px);
+  }
+
+  .location-section__heading {
+    margin-bottom: 30px;
+  }
+
+  .location-section__heading h2 {
+    font-size: 2.7rem;
+  }
+
+  .location-card {
+    border-radius: 22px;
+  }
+
+  .location-card__info {
+    padding: 32px 22px;
+  }
+
+  .location-card__logo {
+    width: 72px;
+    height: 72px;
+  }
+
+  .location-card__info h3 {
+    font-size: 2.8rem;
+  }
+
+  .location-card__map {
+    min-height: 380px;
+  }
+}

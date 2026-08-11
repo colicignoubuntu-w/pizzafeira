@@ -348,7 +348,6 @@
 /* =========================
    CELULAR PEQUENO
 ========================= */
-
 @media (max-width: 520px) {
   .hero {
     min-height: 100svh;
@@ -357,21 +356,8 @@
   .hero__background {
     background-image: url('/images/hero-vertical.jpg');
 
-    /*
-      A imagem fica 135% da altura do Hero.
-      Isso cria sobra para cima e para baixo,
-      permitindo cortar a parte vazia.
-    */
-   background-size: auto 155%;
-background-position: 50% 100%;
-
-    /*
-      50% = centralizado horizontalmente.
-      100% = joga a parte inferior da foto para dentro
-      e corta mais a parte vazia de cima.
-    */
+    background-size: cover;
     background-position: 50% 100%;
-
     background-repeat: no-repeat;
 
     background-color: #16100b;
@@ -384,7 +370,6 @@ background-position: 50% 100%;
 
   .hero__badge {
     max-width: 100%;
-
     margin-bottom: 18px;
 
     white-space: normal;

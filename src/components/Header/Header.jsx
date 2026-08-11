@@ -8,16 +8,19 @@ import {
 import './Header.css'
 
 function Header() {
-  const [menuOpen, setMenuOpen] =
-    useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const closeMenu = () => {
     setMenuOpen(false)
   }
 
+  const whatsappUrl =
+    'https://wa.me/5511945280371?text=Olá!%20Vim%20pelo%20site%20da%20Pizzafeira%20e%20gostaria%20de%20fazer%20um%20orçamento.'
+
   return (
     <header className="header">
       <div className="header__container">
+
         <a
           href="#inicio"
           className="header__logo"
@@ -26,26 +29,21 @@ function Header() {
         >
           <img
             src="/images/logo-pizzafeira.png"
-            alt="Pizzafeira Pizza Artesanal"
+            alt="Logo Pizzafeira"
           />
 
           <div className="header__brand">
-            <strong>
-              Pizzafeira
-            </strong>
-
-            <span>
-              Pizza artesanal
-            </span>
+            <strong>Pizzafeira</strong>
+            <span>Pizza artesanal</span>
           </div>
         </a>
 
         <nav
-          className={`header__nav ${
+          className={
             menuOpen
-              ? 'header__nav--open'
-              : ''
-          }`}
+              ? 'header__nav header__nav--open'
+              : 'header__nav'
+          }
         >
           <a href="#inicio" onClick={closeMenu}>
             Início
@@ -76,10 +74,10 @@ function Header() {
           </a>
 
           <a
-            href="https://wa.me/5511945280371?text=Olá!%20Vim%20pelo%20site%20da%20Pizzafeira%20e%20gostaria%20de%20fazer%20um%20orçamento."
+            className="header__nav-whatsapp"
+            href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="header__mobile-budget"
             onClick={closeMenu}
           >
             <MessageCircle size={18} />
@@ -87,41 +85,36 @@ function Header() {
           </a>
         </nav>
 
-        <a
-          className="header__budget"
-          href="https://wa.me/5511945280371?text=Olá!%20Vim%20pelo%20site%20da%20Pizzafeira%20e%20gostaria%20de%20fazer%20um%20orçamento."
-          target="_blank"
-          rel="noreferrer"
-        >
-          <MessageCircle
-            size={19}
-            strokeWidth={2.4}
-          />
+        <div className="header__actions">
+          <a
+            className="header__whatsapp"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MessageCircle size={18} />
+            Orçamento
+          </a>
 
-          Orçamento
-        </a>
+          <button
+            className="header__menu-button"
+            type="button"
+            aria-label={
+              menuOpen
+                ? 'Fechar menu'
+                : 'Abrir menu'
+            }
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? (
+              <X size={26} />
+            ) : (
+              <Menu size={26} />
+            )}
+          </button>
+        </div>
 
-        <button
-          className="header__menu-button"
-          type="button"
-          aria-label={
-            menuOpen
-              ? 'Fechar menu'
-              : 'Abrir menu'
-          }
-          aria-expanded={menuOpen}
-          onClick={() =>
-            setMenuOpen(
-              (current) => !current
-            )
-          }
-        >
-          {menuOpen ? (
-            <X size={28} />
-          ) : (
-            <Menu size={28} />
-          )}
-        </button>
       </div>
     </header>
   )

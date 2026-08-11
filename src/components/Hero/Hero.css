@@ -105,8 +105,7 @@
   letter-spacing: -0.065em;
 
   text-shadow:
-    0 6px 28px
-    rgba(0, 0, 0, 0.22);
+    0 6px 28px rgba(0, 0, 0, 0.22);
 }
 
 .hero h1 span {
@@ -272,9 +271,9 @@
     background:
       linear-gradient(
         180deg,
-        rgba(16, 8, 3, 0.22) 0%,
-        rgba(16, 8, 3, 0.48) 35%,
-        rgba(16, 8, 3, 0.9) 72%,
+        rgba(16, 8, 3, 0.18) 0%,
+        rgba(16, 8, 3, 0.35) 30%,
+        rgba(16, 8, 3, 0.75) 62%,
         rgba(16, 8, 3, 0.98) 100%
       );
   }
@@ -339,11 +338,8 @@
 
     background-size: cover;
 
-    /*
-      Você pode mudar esta linha depois
-      para controlar o enquadramento.
-    */
-    background-position: center center;
+    /* Mostra mais a parte inferior da foto */
+    background-position: 50% 65%;
 
     background-repeat: no-repeat;
   }
@@ -361,15 +357,20 @@
   .hero__background {
     background-image: url('/images/hero-vertical.jpg');
 
+    /*
+      cover mantém o hero preenchido
+      e corta as partes que sobram.
+    */
     background-size: cover;
 
     /*
-      Ajuste horizontal:
-      50% = centro
-      60% = mostra mais a direita
-      40% = mostra mais a esquerda
+      50% = centro horizontal
+      70% = prioriza mais a parte de baixo da imagem
+
+      Isso corta mais a parte vazia de cima
+      e deixa os rostos mais visíveis.
     */
-    background-position: 50% 15%;
+    background-position: 50% 70%;
 
     background-repeat: no-repeat;
   }
@@ -417,15 +418,25 @@
   }
 
   /*
-    Quando o celular estiver deitado,
+    No celular deitado,
     volta para a imagem horizontal.
   */
   .hero__background {
-    background-image: url('/images/hero-desktop.jpg');
+    background-image: url('/images/hero-horizontal.jpg');
 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+  }
+
+  .hero__overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(16, 8, 3, 0.92) 0%,
+        rgba(16, 8, 3, 0.72) 48%,
+        rgba(16, 8, 3, 0.35) 100%
+      );
   }
 
   .hero__content {

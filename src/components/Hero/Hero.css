@@ -369,7 +369,7 @@
       60% = mostra mais a direita
       40% = mostra mais a esquerda
     */
-    background-position: 50% center;
+    background-position: 50% 15%;
 
     background-repeat: no-repeat;
   }

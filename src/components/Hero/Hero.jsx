@@ -12,10 +12,13 @@ function Hero() {
       className="hero"
       id="inicio"
     >
+      <div className="hero__background" />
+
       <div className="hero__overlay" />
 
       <div className="hero__content">
         <motion.div
+          className="hero__content-inner"
           initial={{
             opacity: 0,
             y: 30,

@@ -47,60 +47,42 @@ function Header() {
               : ''
           }`}
         >
-          <a
-            href="#inicio"
-            onClick={closeMenu}
-          >
+          <a href="#inicio" onClick={closeMenu}>
             Início
           </a>
 
-          <a
-            href="#como-funciona"
-            onClick={closeMenu}
-          >
+          <a href="#como-funciona" onClick={closeMenu}>
             Como funciona
           </a>
 
-          <a
-            href="#cardapio"
-            onClick={closeMenu}
-          >
+          <a href="#cardapio" onClick={closeMenu}>
             Cardápio
           </a>
 
-          <a
-            href="#planos"
-            onClick={closeMenu}
-          >
+          <a href="#planos" onClick={closeMenu}>
             Planos
           </a>
 
-          <a
-            href="#eventos"
-            onClick={closeMenu}
-          >
+          <a href="#eventos" onClick={closeMenu}>
             Eventos
           </a>
 
-          <a
-            href="#galeria"
-            onClick={closeMenu}
-          >
+          <a href="#galeria" onClick={closeMenu}>
             Galeria
           </a>
 
-          <a
-            href="#faq"
-            onClick={closeMenu}
-          >
+          <a href="#faq" onClick={closeMenu}>
             Dúvidas
           </a>
 
           <a
-            href="#orcamento"
+            href="https://wa.me/5511945280371?text=Olá!%20Vim%20pelo%20site%20da%20Pizzafeira%20e%20gostaria%20de%20fazer%20um%20orçamento."
+            target="_blank"
+            rel="noreferrer"
             className="header__mobile-budget"
             onClick={closeMenu}
           >
+            <MessageCircle size={18} />
             Pedir orçamento
           </a>
         </nav>
@@ -135,9 +117,9 @@ function Header() {
           }
         >
           {menuOpen ? (
-            <X size={29} />
+            <X size={28} />
           ) : (
-            <Menu size={29} />
+            <Menu size={28} />
           )}
         </button>
       </div>

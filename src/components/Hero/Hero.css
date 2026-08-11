@@ -362,7 +362,8 @@
       Isso cria sobra para cima e para baixo,
       permitindo cortar a parte vazia.
     */
-    background-size: auto 135%;
+   background-size: auto 155%;
+background-position: 50% 100%;
 
     /*
       50% = centralizado horizontalmente.

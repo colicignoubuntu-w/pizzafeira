@@ -1,288 +1,385 @@
-.header {
-  position: absolute;
-  z-index: 100;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #16100b;
 }
 
-.header__container {
-  width: min(1180px, calc(100% - 40px));
-  min-height: 100px;
+.hero__background {
+  position: absolute;
+  inset: 0;
 
+  background-image: url('/images/hero-vertical.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  transform: scale(1.01);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16, 8, 3, 0.96) 0%,
+      rgba(16, 8, 3, 0.88) 38%,
+      rgba(16, 8, 3, 0.62) 68%,
+      rgba(16, 8, 3, 0.38) 100%
+    );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 24px;
+  padding-top: 150px;
+  padding-bottom: 100px;
 }
 
-.header__logo {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-
-  gap: 12px;
-
-  text-decoration: none;
+.hero__content-inner {
+  max-width: 790px;
 }
 
-.header__logo img {
-  width: 64px;
-  height: 64px;
+.hero__badge {
+  display: inline-flex;
 
-  object-fit: cover;
+  margin-bottom: 25px;
+  padding: 10px 16px;
 
-  border-radius: 50%;
-}
+  border: 1px solid rgba(255, 139, 61, 0.4);
+  border-radius: 999px;
 
-.header__brand {
-  display: flex;
-  flex-direction: column;
-}
+  background: rgba(255, 139, 61, 0.14);
+  color: #ff9b58;
 
-.header__brand strong {
-  color: #ff8b3d;
-
-  font-family: 'Archivo Black', sans-serif;
-
-  font-size: 1.3rem;
-  line-height: 1;
-}
-
-.header__brand span {
-  margin-top: 5px;
-
-  color: rgba(255, 248, 232, 0.62);
-
-  font-size: 0.6rem;
-  font-weight: 800;
+  font-size: 0.78rem;
+  font-weight: 900;
   letter-spacing: 0.11em;
   text-transform: uppercase;
+
+  backdrop-filter: blur(10px);
 }
 
-.header__nav {
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+
+  color: #fff8e8;
+
+  font-size: clamp(3.6rem, 8vw, 7rem);
+  line-height: 0.91;
+  letter-spacing: -0.065em;
+
+  text-shadow:
+    0 6px 28px
+    rgba(0, 0, 0, 0.22);
+}
+
+.hero h1 span {
+  display: block;
+  color: #ff8b3d;
+}
+
+.hero p {
+  max-width: 670px;
+  margin: 30px 0 0;
+
+  color: rgba(255, 248, 232, 0.86);
+
+  font-size: clamp(1rem, 2vw, 1.23rem);
+  line-height: 1.75;
+}
+
+.hero__actions {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
 
-  gap: 18px;
+  gap: 14px;
 
-  margin-left: auto;
+  margin-top: 36px;
 }
 
-.header__nav a {
-  color: rgba(255, 255, 255, 0.86);
-
-  font-size: 0.83rem;
-  font-weight: 700;
-
-  text-decoration: none;
-}
-
-.header__budget {
-  min-height: 46px;
+.hero__button {
+  min-height: 54px;
+  padding: 0 23px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  gap: 8px;
+  gap: 9px;
 
-  padding: 0 17px;
+  border-radius: 14px;
 
-  border-radius: 13px;
-
-  background: #cf3a24;
-  color: #ffffff;
-
-  font-size: 0.86rem;
   font-weight: 900;
-
   text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.header__menu-button {
-  display: none;
+.hero__button:hover {
+  transform: translateY(-3px);
+}
 
-  width: 46px;
-  height: 46px;
+.hero__button--primary {
+  background: #cf3a24;
+  color: #ffffff;
+}
 
+.hero__button--primary:hover {
+  background: #b52f1c;
+}
+
+.hero__button--secondary {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+.hero__button--secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hero__info {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 32px;
+
+  margin-top: 54px;
+  padding-top: 26px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero__info div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hero__info strong {
+  color: #fff8e8;
+  font-size: 0.9rem;
+}
+
+.hero__info span {
+  color: rgba(255, 248, 232, 0.58);
+  font-size: 0.78rem;
+}
+
+.hero__scroll {
+  position: absolute;
+  z-index: 3;
+
+  bottom: 25px;
+  left: 50%;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 0;
-
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+  border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.07);
   color: #ffffff;
 
-  cursor: pointer;
+  text-decoration: none;
+
+  transform: translateX(-50%);
+
+  backdrop-filter: blur(10px);
 }
 
-.header__mobile-budget {
-  display: none;
-}
+/* ========================================
+   TELA HORIZONTAL / DESKTOP / CELULAR DEITADO
+======================================== */
 
-@media (max-width: 1050px) {
-  .header__brand {
-    display: none;
+@media (orientation: landscape) {
+  .hero__background {
+    background-image: url('/images/hero-horizontal.jpg');
+    background-position: center center;
   }
-
-  .header__nav {
-    gap: 14px;
-  }
 }
+
+/* ========================================
+   TABLET / CELULAR
+======================================== */
 
 @media (max-width: 900px) {
-  .header {
-    position: absolute;
+  .hero {
+    min-height: 100svh;
+    align-items: flex-end;
   }
 
-  .header__container {
-    width: calc(100% - 24px);
-    min-height: 78px;
-
-    gap: 12px;
+  .hero__overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(16, 8, 3, 0.20) 0%,
+        rgba(16, 8, 3, 0.38) 30%,
+        rgba(16, 8, 3, 0.78) 62%,
+        rgba(16, 8, 3, 0.98) 100%
+      );
   }
 
-  .header__logo img {
-    width: 54px;
-    height: 54px;
+  .hero__content {
+    width: min(100% - 28px, 1180px);
+
+    padding-top: 130px;
+    padding-bottom: 65px;
   }
 
-  .header__brand {
-    display: flex;
+  .hero__content-inner {
+    max-width: none;
   }
 
-  .header__brand strong {
-    font-size: 1.05rem;
+  .hero h1 {
+    max-width: 100%;
+
+    font-size: clamp(2.9rem, 13vw, 4.6rem);
+    line-height: 0.95;
   }
 
-  .header__brand span {
-    font-size: 0.5rem;
+  .hero p {
+    max-width: 100%;
+    margin-top: 22px;
+
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
-  .header__budget {
-    display: none;
-  }
-
-  .header__menu-button {
-    display: inline-flex;
-    flex-shrink: 0;
-  }
-
-  .header__nav {
-    position: fixed;
-
-    top: 84px;
-    left: 12px;
-    right: 12px;
-
-    width: auto;
-    max-height: calc(100svh - 100px);
-
-    overflow-y: auto;
-
-    display: flex;
+  .hero__actions {
     flex-direction: column;
-    align-items: stretch;
-
-    gap: 4px;
-
-    margin: 0;
-    padding: 12px;
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
-
-    background: rgba(24, 16, 10, 0.98);
-
-    box-shadow:
-      0 24px 60px
-      rgba(0, 0, 0, 0.42);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transform: translateY(-8px);
-
-    transition:
-      opacity 0.2s ease,
-      visibility 0.2s ease,
-      transform 0.2s ease;
-
-    backdrop-filter: blur(18px);
   }
 
-  .header__nav--open {
-    opacity: 1;
-    visibility: visible;
-
-    transform: translateY(0);
-  }
-
-  .header__nav a {
+  .hero__button {
     width: 100%;
-
-    padding: 14px;
-
-    border-radius: 10px;
-
-    color: #ffffff;
-
-    font-size: 0.95rem;
   }
 
-  .header__nav a:hover {
-    background: rgba(255, 255, 255, 0.08);
+  .hero__info {
+    gap: 18px;
+    margin-top: 34px;
   }
 
-  .header__mobile-budget {
-    display: flex;
+  .hero__info div {
+    width: calc(50% - 9px);
+  }
 
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-
-    margin-top: 6px;
-
-    background: #cf3a24;
+  .hero__scroll {
+    display: none;
   }
 }
 
-@media (max-width: 480px) {
-  .header__container {
-    width: calc(100% - 20px);
+/* ========================================
+   CELULAR EM PÉ
+======================================== */
+
+@media (max-width: 520px) and (orientation: portrait) {
+  .hero__background {
+    background-image: url('/images/hero-vertical.jpg');
+
+    background-size: cover;
+
+    /* Aqui você controla qual parte da foto aparece. */
+    background-position: center 25%;
   }
 
-  .header__logo img {
-    width: 48px;
-    height: 48px;
+  .hero__content {
+    padding-top: 115px;
+    padding-bottom: 48px;
   }
 
-  .header__brand strong {
-    font-size: 0.95rem;
+  .hero__badge {
+    max-width: 100%;
+
+    margin-bottom: 18px;
+
+    white-space: normal;
+
+    font-size: 0.68rem;
+    line-height: 1.4;
   }
 
-  .header__brand span {
+  .hero h1 {
+    font-size: clamp(2.7rem, 14vw, 4rem);
+  }
+
+  .hero__info {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero__info div {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   CELULAR DEITADO
+======================================== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    min-height: 100svh;
+    align-items: center;
+  }
+
+  .hero__background {
+    background-image: url('/images/hero-horizontal.jpg');
+    background-position: center center;
+  }
+
+  .hero__content {
+    padding-top: 90px;
+    padding-bottom: 35px;
+  }
+
+  .hero__content-inner {
+    max-width: 650px;
+  }
+
+  .hero__badge {
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.2rem);
+  }
+
+  .hero p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .hero__actions {
+    margin-top: 20px;
+    flex-direction: row;
+  }
+
+  .hero__button {
+    width: auto;
+    min-height: 46px;
+  }
+
+  .hero__info {
     display: none;
-  }
-
-  .header__menu-button {
-    width: 44px;
-    height: 44px;
-  }
-
-  .header__nav {
-    left: 10px;
-    right: 10px;
-    top: 76px;
   }
 }

@@ -335,7 +335,7 @@
 
 @media (max-width: 768px) {
   .hero__background {
-    background-image: url('/images/hero-mobile.jpg');
+    background-image: url('/images/hero-vertical.jpg');
 
     background-size: cover;
 
